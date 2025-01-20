@@ -4,10 +4,116 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sam Zach's Website</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Sidebar Styling */
+        .sidebar {
+            width: 250px;
+            background-color: #333;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        .sidebar h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .sidebar ul {
+            list-style: none;
+        }
+        .sidebar ul li {
+            margin: 15px 0;
+        }
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .sidebar ul li a:hover {
+            text-decoration: underline;
+        }
+        .sidebar .footer {
+            font-size: 12px;
+            text-align: center;
+            color: #aaa;
+        }
+
+        /* Main Content Styling */
+        .main-content {
+            flex-grow: 1;
+            padding: 20px;
+            background-color: #f4f4f4;
+            overflow-y: auto;
+        }
+        .main-content h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .main-content p {
+            line-height: 1.6;
+            color: #555;
+        }
+
+        /* Add Responsiveness */
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: center;
+                height: auto;
+                padding: 10px;
+            }
+            .main-content {
+                padding: 10px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to Sam Zach's Website!</h1>
-    <p>This is my personal website hosted on GitHub Pages.</p>
-    <a href="https://github.com">Visit GitHub</a>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div>
+            <h2>Sam Zach</h2>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer">
+            &copy; 2025 Sam Zach. All rights reserved.
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <h1>Welcome to My Website</h1>
+        <p>
+            Hello! I'm Sam Zach, a Mechanical Engineering student at UC Berkeley. This is my personal website where
+            I showcase my projects, share my experiences, and connect with others.
+        </p>
+        <p>
+            Feel free to explore the navigation menu on the left to learn more about me, my work, and how to get in touch.
+        </p>
+    </div>
 </body>
 </html>
