@@ -31,21 +31,11 @@
             padding: 20px;
             border: 4px solid white;
             display: inline-block;
-            transition: font-size 0.5s ease, margin-top 0.5s ease, border-width 0.5s ease;
+            white-space: nowrap; /* Prevents line wrapping */
+            transition: border-width 0.5s ease, margin-top 0.5s ease;
         }
 
-        /* Box Shrink Effect on Scroll */
-        .hero.shrink h1 {
-            font-size: 2.5rem;
-            margin-top: 0;
-            border-width: 2px;
-            position: fixed;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 1000;
-        }
-
+        /* Content Section */
         .content {
             padding: 20px;
             line-height: 1.6;
@@ -69,21 +59,31 @@
     </div>
 
     <script>
-        let ticking = false;
+        const hero = document.getElementById('hero');
+        const heroText = hero.querySelector('h1');
+
+        // Initial font size in rem (matches CSS)
+        const initialFontSize = 6;
+        const minFontSize = 2.5; // Minimum font size in rem
+        const shrinkStart = 50; // Scroll position (px) where shrinking starts
+        const shrinkEnd = 300; // Scroll position (px) where shrinking ends
 
         window.addEventListener('scroll', () => {
-            if (!ticking) {
-                window.requestAnimationFrame(() => {
-                    const hero = document.getElementById('hero');
-                    if (window.scrollY > 150) {
-                        hero.classList.add('shrink');
-                    } else {
-                        hero.classList.remove('shrink');
-                    }
-                    ticking = false;
-                });
-                ticking = true;
+            const scrollY = window.scrollY;
+
+            // Calculate new font size based on scroll position
+            let newFontSize = initialFontSize;
+            if (scrollY > shrinkStart) {
+                const progress = Math.min((scrollY - shrinkStart) / (shrinkEnd - shrinkStart), 1);
+                newFontSize = initialFontSize - progress * (initialFontSize - minFontSize);
             }
+
+            // Apply new font size and keep it linear
+            heroText.style.fontSize = `${newFontSize}rem`;
+
+            // Optional: Adjust border width based on size (for better visuals)
+            const newBorderWidth = (newFontSize / initialFontSize) * 4; // Original border width is 4px
+            heroText.style.borderWidth = `${newBorderWidth}px`;
         });
     </script>
 </body>
