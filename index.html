@@ -3,91 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sam and Zach Website</title>
+    <title>Creative Title</title>
     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #333;
+            background-color: #222;
             color: white;
+            overflow-x: hidden;
         }
 
-        /* Header Styling */
-        header {
-            background: linear-gradient(to bottom, #FFD700, #FFA500);
-            text-align: center;
-            padding: 20px;
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-        }
-
-        /* Navigation Bar Styling */
-        nav {
+        /* Fullscreen Section */
+        .hero {
             display: flex;
             justify-content: center;
-            background-color: black;
-            padding: 10px 0;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 20px;
-            font-size: 1rem;
-            text-transform: uppercase;
-        }
-
-        nav a:hover {
-            border-bottom: 2px solid white;
-        }
-
-        /* Image Section Styling */
-        .image-section {
+            align-items: center;
+            height: 100vh;
             position: relative;
+            overflow: hidden;
             text-align: center;
-            height: 400px;
-            background: url('https://via.placeholder.com/1500x400') no-repeat center center/cover;
         }
 
-        /* Content Section */
+        .hero h1 {
+            font-size: 6rem;
+            font-weight: bold;
+            margin: 0;
+            padding: 20px;
+            border: 4px solid white;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        /* Box Shrink Effect on Scroll */
+        .hero.shrink h1 {
+            font-size: 2.5rem;
+            margin-top: 0;
+            border-width: 2px;
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+        }
+
         .content {
             padding: 20px;
-            background-color: #444;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-            margin: 20px;
-            border-radius: 8px;
-        }
-
-        .content p {
             line-height: 1.6;
             font-size: 1rem;
+            background-color: #333;
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        Sam and Zach Website
-    </header>
-
-    <!-- Navigation Bar -->
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </nav>
-
-    <!-- Image Section -->
-    <div class="image-section" id="home"></div>
+    <!-- Hero Section -->
+    <div class="hero" id="hero">
+        <h1>Creative Director</h1>
+    </div>
 
     <!-- Content Section -->
     <div class="content">
-        <p>
-            Here’s a 2000-word block of **Lorem Ipsum** text for your use: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vehicula justo sit amet tellus pellentesque, sed congue lacus aliquet. Integer sit amet luctus mi. Sed auctor nec nisi vel volutpat. Cras placerat tincidunt felis, ac tincidunt sem vehicula a. Donec tincidunt sem eget turpis vestibulum, a scelerisque nulla hendrerit. Fusce nec mauris at mi tincidunt vestibulum vel nec lacus. Cras vitae nisi eget justo volutpat bibendum ac quis augue. Etiam fringilla libero sit amet magna mollis fermentum. Proin ac metus dolor. Nullam id quam non dolor dapibus malesuada. Etiam volutpat sit amet velit a auctor. Vestibulum porttitor fermentum lectus.
-        </p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget metus vel lacus posuere molestie. Integer vitae tincidunt felis. Ut viverra libero id nibh ullamcorper, ac mollis nunc suscipit. Nullam sit amet ex magna. Sed vestibulum ultricies feugiat. Etiam vel suscipit metus. Suspendisse dignissim congue sapien in feugiat.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur venenatis sapien, in egestas sapien. Integer laoreet ipsum nec dui porttitor, a posuere lacus iaculis. Quisque ac ligula non nisi sollicitudin auctor sed non mauris.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur venenatis sapien, in egestas sapien. Integer laoreet ipsum nec dui porttitor, a posuere lacus iaculis. Quisque ac ligula non nisi sollicitudin auctor sed non mauris.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur venenatis sapien, in egestas sapien. Integer laoreet ipsum nec dui porttitor, a posuere lacus iaculis. Quisque ac ligula non nisi sollicitudin auctor sed non mauris.</p>
     </div>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const hero = document.getElementById('hero');
+            if (window.scrollY > 50) {
+                hero.classList.add('shrink');
+            } else {
+                hero.classList.remove('shrink');
+            }
+        });
+    </script>
 </body>
 </html>
