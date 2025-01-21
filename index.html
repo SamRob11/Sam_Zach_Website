@@ -24,20 +24,6 @@
             text-align: center;
         }
 
-        .hero .hero-box {
-            position: relative;
-            background-color: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 255, 255, 0.2);
-            transition: all 0.2s ease;
-        }
-
-        .hero .hero-box.shrinking {
-            padding: 10px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3), 0 0 15px rgba(255, 255, 255, 0.15);
-        }
-
         .hero h1 {
             font-size: 6rem;
             font-weight: bold;
@@ -60,18 +46,16 @@
 <body>
     <!-- Hero Section -->
     <div class="hero" id="hero">
-        <div class="hero-box" id="hero-box">
-            <h1>Creative Director</h1>
-        </div>
+        <h1>Creative Director</h1>
     </div>
 
     <!-- Content Section -->
     <div class="content">
         <p>At UC Berkeley, I have been deeply engaged in the dynamic field of Mechanical Engineering, combining theoretical foundations with hands-on problem-solving. My journey has been defined by a rigorous academic curriculum that emphasizes advanced topics such as robotics, thermodynamics, and computational modeling. Beyond the classroom, I’ve actively participated in collaborative projects, working with interdisciplinary teams to design and prototype innovative solutions. One of my most rewarding experiences has been contributing to the development of CAD models for sustainable energy systems, where I applied technical knowledge to real-world challenges. Additionally, I’ve honed my skills in programming and simulation, enabling me to optimize designs and enhance system efficiency. Outside of academics, I’ve immersed myself in UC Berkeley’s vibrant engineering community, attending workshops and participating in competitions to stay at the forefront of emerging technologies. These opportunities have not only enriched my technical expertise but have also strengthened my leadership, communication, and teamwork abilities. As I prepare for the next phase of my career, I am excited to leverage the robust foundation I’ve built at UC Berkeley to drive impactful solutions in the engineering world.</p>
+    </div>
 
     <script>
         const heroText = document.querySelector('#hero h1');
-        const heroBox = document.querySelector('#hero-box');
 
         // Initial font size and settings
         const initialFontSize = 6; // In rem
@@ -95,13 +79,6 @@
             // Adjust border width based on size
             const newBorderWidth = (newFontSize / initialFontSize) * 4; // Original border width is 4px
             heroText.style.borderWidth = `${newBorderWidth}px`;
-
-            // Shrink the hero box
-            if (scrollY > shrinkStart) {
-                heroBox.classList.add('shrinking');
-            } else {
-                heroBox.classList.remove('shrinking');
-            }
         });
     </script>
 </body>
