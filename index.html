@@ -3,170 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sam Zach's Website</title>
+    <title>Sam and Zach Website</title>
     <style>
-        /* General Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
         body {
+            margin: 0;
             font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* Layout Styling */
-        .container {
-            display: flex;
-            height: 100vh;
-        }
-
-        .sidebar {
-            width: 250px;
             background-color: #333;
             color: white;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            padding: 20px;
-            box-shadow: 3px 0 5px rgba(0, 0, 0, 0.3);
-            z-index: 2;
-        }
-        .sidebar.right {
-            box-shadow: -3px 0 5px rgba(0, 0, 0, 0.3);
         }
 
-        .sidebar h2 {
-            margin-bottom: 20px;
+        /* Header Styling */
+        header {
+            background: linear-gradient(to bottom, #FFD700, #FFA500);
             text-align: center;
+            padding: 20px;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
         }
 
-        .sidebar ul {
-            list-style: none;
+        /* Navigation Bar Styling */
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: black;
+            padding: 10px 0;
         }
 
-        .sidebar ul li {
-            margin: 15px 0;
-        }
-
-        .sidebar ul li a {
+        nav a {
             color: white;
             text-decoration: none;
-            font-size: 16px;
+            margin: 0 20px;
+            font-size: 1rem;
+            text-transform: uppercase;
         }
 
-        .sidebar ul li a:hover {
-            text-decoration: underline;
+        nav a:hover {
+            border-bottom: 2px solid white;
         }
 
-        .sidebar .footer {
-            font-size: 12px;
+        /* Image Section Styling */
+        .image-section {
+            position: relative;
             text-align: center;
-            color: #aaa;
+            height: 400px;
+            background: url('https://via.placeholder.com/1500x400') no-repeat center center/cover;
         }
 
-        .main-content {
-            flex-grow: 1;
-            padding: 40px;
-            background-color: #f4f4f4;
-            overflow-y: auto;
-            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+        /* Content Section */
+        .content {
+            padding: 20px;
+            background-color: #444;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            margin: 20px;
+            border-radius: 8px;
         }
 
-        .main-content h1 {
-            margin-bottom: 20px;
-            color: #333;
-        }
-
-        .main-content section {
-            margin-bottom: 100px;
-            padding-bottom: 40px;
-            border-bottom: 1px solid #ccc;
-        }
-
-        .main-content section:last-child {
-            border-bottom: none;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-            }
-
-            .sidebar {
-                width: 100%;
-                flex-direction: row;
-                justify-content: space-around;
-                align-items: center;
-                height: auto;
-                padding: 10px;
-                box-shadow: none;
-            }
-
-            .sidebar.right {
-                display: none;
-            }
-
-            .main-content {
-                padding: 20px;
-            }
+        .content p {
+            line-height: 1.6;
+            font-size: 1rem;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Left Sidebar -->
-        <div class="sidebar">
-            <h2>Sam Zach</h2>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="footer">&copy; 2025 Sam Zach. All rights reserved.</div>
-        </div>
+    <!-- Header -->
+    <header>
+        Sam and Zach Website
+    </header>
 
-        <!-- Main Content -->
-        <div class="main-content">
-            <section id="home">
-                <h1>Home</h1>
-                <p>Welcome to my personal website. Navigate using the links in the sidebars to explore more!</p>
-            </section>
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
 
-            <section id="about">
-                <h1>About</h1>
-                <p>I'm Sam Zach, a Mechanical Engineering student at UC Berkeley. I specialize in robotics and design engineering.</p>
-            </section>
+    <!-- Image Section -->
+    <div class="image-section" id="home"></div>
 
-            <section id="projects">
-                <h1>Projects</h1>
-                <p>Here are some of my recent projects:</p>
-                <ul>
-                    <li>Robotics Design</li>
-                    <li>CAD Simulations</li>
-                    <li>Thermodynamic Systems</li>
-                </ul>
-            </section>
-
-            <section id="contact">
-                <h1>Contact</h1>
-                <p>You can reach me via email at sam.zach@example.com or follow me on <a href="https://github.com">GitHub</a>.</p>
-            </section>
-        </div>
-
-        <!-- Right Sidebar -->
-        <div class="sidebar right">
-            <h2>Quick Links</h2>
-            <ul>
-                <li><a href="#home">Go to Home</a></li>
-                <li><a href="#about">Learn About Me</a></li>
-                <li><a href="#projects">View Projects</a></li>
-                <li><a href="#contact">Contact Me</a></li>
-            </ul>
-        </div>
+    <!-- Content Section -->
+    <div class="content">
+        <p>
+            Here’s a 2000-word block of **Lorem Ipsum** text for your use: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vehicula justo sit amet tellus pellentesque, sed congue lacus aliquet. Integer sit amet luctus mi. Sed auctor nec nisi vel volutpat. Cras placerat tincidunt felis, ac tincidunt sem vehicula a. Donec tincidunt sem eget turpis vestibulum, a scelerisque nulla hendrerit. Fusce nec mauris at mi tincidunt vestibulum vel nec lacus. Cras vitae nisi eget justo volutpat bibendum ac quis augue. Etiam fringilla libero sit amet magna mollis fermentum. Proin ac metus dolor. Nullam id quam non dolor dapibus malesuada. Etiam volutpat sit amet velit a auctor. Vestibulum porttitor fermentum lectus.
+        </p>
     </div>
 </body>
 </html>
