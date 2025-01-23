@@ -3,132 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Samuel Robinson</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            overflow-x: hidden;
-        }
-
-        .section {
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            text-align: center;
-        }
-
-        .section1 {
-            background: #333;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .section1 h1 {
-            font-size: 4rem;
-            margin: 0;
-        }
-
-        .section2 {
-            position: relative;
-            background: #222;
-        }
-
-        .section2 .header-bar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            height: 60px;
-            background: #1a1a1a;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-size: 1.5rem;
-            z-index: 100;
-            transform: translateY(-100%);
-            transition: transform 0.3s;
-        }
-
-        .section2.scroll-active .header-bar {
-            transform: translateY(0);
-        }
-
-        .section3 {
-            background: #111;
-            padding: 50px 20px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .card {
-            background: #333;
-            color: white;
-            border-radius: 15px;
-            padding: 20px;
-            text-align: center;
-            width: 250px;
-            cursor: pointer;
-        }
-
-        .card:hover {
-            background: #444;
-        }
-
-        .back-button {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            background: #1a1a1a;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .back-button:hover {
-            background: #333;
-        }
-    </style>
+    <title>Cool Website</title>
+    <link rel="stylesheet" href="https://use.typekit.net/mbp6wje.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="section section1">
-        <h1>Samuel Robinson</h1>
+    <div class="hero">
+        <h1>Sam Robinson</h1>
+        <p>Mechanical Engineering Student | UC Berkeley</p>
+        <a href="#features">Explore My Work</a>
     </div>
-    <div class="section section2">
-        <div class="header-bar">Samuel Robinson</div>
-        <div>
-            <h1>About</h1>
-            <h1>Contact</h1>
-            <h1>Goals</h1>
+
+    <section id="features" class="features">
+        <h2>School Projects</h2>
+        <div class="features-container">
+            <div class="feature">
+                <h3>Crutch Project</h3>
+                <p>An innovative way to traverse with a below the knee injury</p>
+            </div>
+            <div class="feature">
+                <h3>Modern Design</h3>
+                <p>Enjoy sleek and contemporary visuals that stand out.</p>
+            </div>
+            <div class="feature">
+                <h3>Easy Navigation</h3>
+                <p>Find everything you need with our user-friendly interface.</p>
+            </div>
+            <div class="feature">
+                <h3>Mobile Friendly</h3>
+                <p>Access your favorite features on any device.</p>
+            </div>
         </div>
-    </div>
-    <div class="section section3">
-        <div class="card" onclick="navigateToPage('project1.html')">Project 1</div>
-        <div class="card" onclick="navigateToPage('project2.html')">Project 2</div>
-        <div class="card" onclick="navigateToPage('project3.html')">Project 3</div>
-    </div>
+    </section>
 
-    <script>
-        window.addEventListener('scroll', () => {
-            const section2 = document.querySelector('.section2');
-            if (window.scrollY > window.innerHeight * 0.5) {
-                section2.classList.add('scroll-active');
-            } else {
-                section2.classList.remove('scroll-active');
-            }
-        });
-
-        function navigateToPage(page) {
-            window.location.href = page;
-        }
-    </script>
+    <footer>
+        <p>&copy; 2025 Sam's Website.</p>
+    </footer>
 </body>
 </html>
