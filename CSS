@@ -1,3 +1,117 @@
-h1 {
-    color: darkblue;
+body {
+    margin: 0;
+    font-family: "epilogue", sans-serif; /* it only knows weights of 700 and 500 for now */
+    font-weight: 700;
+    font-style: normal;
+    background: linear-gradient(135deg, #5d4037, #3e2723);
+    color: #fff;
+    overflow-x: hidden;
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(to bottom, rgba(93, 64, 55, 0.9), rgba(62, 39, 35, 0.9)), url('https://source.unsplash.com/random/1600x900/?nature');
+    background-size: cover;
+    background-position: center;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-family: "epilogue", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    margin: 0;
+    animation: fadeIn 2s ease;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin: 10px 0 20px;
+    animation: fadeIn 3s ease;
+    font-family: "epilogue", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.hero a {
+    
+    padding: 10px 20px;
+    background: #6d4c41;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.hero a:hover {
+    background: #4e342e;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.features {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.features h2 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+}
+
+.features-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.feature {
+    background: #795548;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.feature h3 {
+    font-size: 1.5rem;
+}
+
+.feature p {
+    font-size: 1rem;
+    font-weight: 500;
+    font-style: italic;
+}
+
+footer {
+    background: #3e2723;
+    color: #d7ccc8;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+}
+
+footer p {
+    margin: 0;
 }
