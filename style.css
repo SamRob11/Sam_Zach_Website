@@ -38,6 +38,28 @@ body {
     font-style: normal;
 }
 
+/* iPhone sizing */
+@media (max-width: 768px) {
+    .hero {
+        padding: 20px; 
+    }
+
+    .hero h1 {
+        font-size: 2.5rem; 
+        line-height: 1.2; 
+    }
+
+    .hero p {
+        font-size: 1.2rem; 
+        margin-bottom: 15px; 
+    }
+
+    .hero a {
+        padding: 10px 15px; 
+        font-size: 1rem; 
+    }
+}
+
 .hero a {
     
     padding: 10px 20px;
