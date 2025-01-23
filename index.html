@@ -3,83 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creative Title</title>
+    <title>Samuel Robinson</title>
     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #222;
-            color: white;
             overflow-x: hidden;
         }
 
-        /* Fullscreen Section */
-        .hero {
+        .section {
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            position: relative;
-            overflow: hidden;
+            color: white;
             text-align: center;
         }
 
-        .hero h1 {
-            font-size: 6rem;
-            font-weight: bold;
-            margin: 0;
-            padding: 20px;
-            border: 4px solid white;
-            display: inline-block;
-            white-space: nowrap;
-            transition: all 0.2s ease;
+        .section1 {
+            background: #333;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
-        .content {
+        .section1 h1 {
+            font-size: 4rem;
+            margin: 0;
+        }
+
+        .section2 {
+            position: relative;
+            background: #222;
+        }
+
+        .section2 .header-bar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 60px;
+            background: #1a1a1a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 1.5rem;
+            z-index: 100;
+            transform: translateY(-100%);
+            transition: transform 0.3s;
+        }
+
+        .section2.scroll-active .header-bar {
+            transform: translateY(0);
+        }
+
+        .section3 {
+            background: #111;
+            padding: 50px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .card {
+            background: #333;
+            color: white;
+            border-radius: 15px;
             padding: 20px;
-            line-height: 1.6;
-            font-size: 1rem;
-            background-color: #333;
+            text-align: center;
+            width: 250px;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            background: #444;
+        }
+
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: #1a1a1a;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+            background: #333;
         }
     </style>
 </head>
 <body>
-    <!-- Hero Section -->
-    <div class="hero" id="hero">
-        <h1>Creative Director</h1>
+    <div class="section section1">
+        <h1>Samuel Robinson</h1>
     </div>
-
-    <!-- Content Section -->
-    <div class="content">
-        <p>At UC Berkeley, I have been deeply engaged in the dynamic field of Mechanical Engineering, combining theoretical foundations with hands-on problem-solving. My journey has been defined by a rigorous academic curriculum that emphasizes advanced topics such as robotics, thermodynamics, and computational modeling. Beyond the classroom, I’ve actively participated in collaborative projects, working with interdisciplinary teams to design and prototype innovative solutions. One of my most rewarding experiences has been contributing to the development of CAD models for sustainable energy systems, where I applied technical knowledge to real-world challenges. Additionally, I’ve honed my skills in programming and simulation, enabling me to optimize designs and enhance system efficiency. Outside of academics, I’ve immersed myself in UC Berkeley’s vibrant engineering community, attending workshops and participating in competitions to stay at the forefront of emerging technologies. These opportunities have not only enriched my technical expertise but have also strengthened my leadership, communication, and teamwork abilities. As I prepare for the next phase of my career, I am excited to leverage the robust foundation I’ve built at UC Berkeley to drive impactful solutions in the engineering world.</p>
+    <div class="section section2">
+        <div class="header-bar">Samuel Robinson</div>
+        <div>
+            <h1>About</h1>
+            <h1>Contact</h1>
+            <h1>Goals</h1>
+        </div>
+    </div>
+    <div class="section section3">
+        <div class="card" onclick="navigateToPage('project1.html')">Project 1</div>
+        <div class="card" onclick="navigateToPage('project2.html')">Project 2</div>
+        <div class="card" onclick="navigateToPage('project3.html')">Project 3</div>
     </div>
 
     <script>
-        const heroText = document.querySelector('#hero h1');
-
-        // Initial font size and settings
-        const initialFontSize = 6; // In rem
-        const minFontSize = 2.5; // Minimum font size in rem
-        const shrinkStart = 50; // Scroll position (px) where shrinking starts
-        const shrinkEnd = 300; // Scroll position (px) where shrinking ends
-
         window.addEventListener('scroll', () => {
-            const scrollY = window.scrollY;
-
-            // Calculate new font size based on scroll position
-            let newFontSize = initialFontSize;
-            if (scrollY > shrinkStart) {
-                const progress = Math.min((scrollY - shrinkStart) / (shrinkEnd - shrinkStart), 1);
-                newFontSize = initialFontSize - progress * (initialFontSize - minFontSize);
+            const section2 = document.querySelector('.section2');
+            if (window.scrollY > window.innerHeight * 0.5) {
+                section2.classList.add('scroll-active');
+            } else {
+                section2.classList.remove('scroll-active');
             }
-
-            // Apply new font size
-            heroText.style.fontSize = `${newFontSize}rem`;
-
-            // Adjust border width based on size
-            const newBorderWidth = (newFontSize / initialFontSize) * 4; // Original border width is 4px
-            heroText.style.borderWidth = `${newBorderWidth}px`;
         });
+
+        function navigateToPage(page) {
+            window.location.href = page;
+        }
     </script>
 </body>
 </html>
